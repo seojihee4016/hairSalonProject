@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인 화면</title>
+
+  <!-- mainWebName 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <link href="../hairProject/main.css" rel="stylesheet">
+
+  <!-- imageLogo 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="mainContainer">
+
+    <h1 class="mainWebName" style="font-size: 3rem;">HairLogo</h1>
+
+    <div id="moveBottomBtn" >
+      <button type="button" class="moveBottomBtn">About</button>
+      <button type="button" class="moveBottomBtn">Service</button>
+      <button type="button" class="moveBottomBtn">Review</button>
+      <button type="button" class="moveBottomBtn">Portfolio</button>
+      <button type="button" class="moveBottomBtn">Contact</button>
+    </div>
+    
+  <div>
+    <img src="" alt="" class="mainImage">
+    <p class="cancel">Hair 관련 이미지 첨부</p>
+    <h3 class="imageLogo" style="text-align:center; font-size:110px;"><span class="color_11">Hair & Higher</span></h3>
+  </div>
+
+    <div class="explain">
+      <ul>
+        <li>헤어샵 설명</li><li>헤어샵 설명</li>
+        <li>이용 설명</li><li>이용 설명</li>
+      </ul>
+    </div>
+
+    <div class="service">
+      <img src="" alt="" class="serviceImage">
+      <img src="" alt="" class="serviceImage">
+      <img src="" alt="" class="serviceImage">
+      <p class="cancel">서비스 관련 이미지 첨부하고 저장</p>
+    </div>
+
+
+  </div>
+
+
+<script>
+    const $bottomBtn = document.querySelector(".moveBottomBtn");
+
+// 버튼 클릭 시 페이지 하단으로 이동
+$bottomBtn.onclick = () => {
+  window.scrollTo({ 
+    top: document.body.scrollHeight, // <- 페이지 총 Height
+    behavior: "smooth" 
+  });
+};
+</script>
+
+
+
+
+
+</body>
+
+</html>

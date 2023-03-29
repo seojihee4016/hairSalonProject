@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 3000px;
+}
+
+.mainWebName {
+  font-family: 'Caveat', cursive;
+  margin-top: 10px;
+}
+
+#moveBottomBtn {
+  text-align: center;
+  position: relative;
+  bottom: 28px;
+  left: 300px;
+}
+.btns {
+  padding: .6rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: .2s;
+  margin-right: .4rem;
+}
+.mainImage {
+  width: 100%;
+  height: 300px;
+  margin-top: 10px;
+  border: 1px solid black;
+}
+
+.cancel {
+  position: relative;
+  bottom: 300px;
+  line-height: 50%;
+}
+
+.imageLogo {
+  color: rgb(8, 0, 0);
+  /* border: 1px solid palevioletred */
+  text-shadow: 1px 1px 1px #1b011b;
+  font-family: 'Dancing Script', cursive;
+  position: relative;
+  bottom: 100px;
+}
+
+.explain {
+  position: relative;
+  text-align: center;
+  bottom: 80px;
+}
+
+.serviceImage{
+  width: 25%;
+  height: 200px;
+  /* margin-top: 10px; */
+  margin-left: 60px;
+  border: 1px solid black;
+}
