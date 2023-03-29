@@ -11,13 +11,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-  <link href="../hairProject/main.css" rel="stylesheet">
+  <link href="../hairSalonProject/main.css" rel="stylesheet">
 
   <!-- imageLogo 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 
+  <!-- button 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- 부트스트랩 캐러셀 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
@@ -25,51 +33,88 @@
 
     <h1 class="mainWebName" style="font-size: 3rem;">HairLogo</h1>
 
-    <div id="moveBottomBtn" >
+    <div id="moveBottomBtn">
       <button type="button" class="moveBottomBtn">About</button>
-      <button type="button" class="moveBottomBtn">Service</button>
+      <button type="button" class="moveBottomBtn">Services</button>
+      <button type="button" class="moveBottomBtn" onclick="location.href='Designer.html';">Designers</button>
+      <button type="button" class="moveBottomBtn">Reservation</button>
       <button type="button" class="moveBottomBtn">Review</button>
-      <button type="button" class="moveBottomBtn">Portfolio</button>
       <button type="button" class="moveBottomBtn">Contact</button>
     </div>
-    
-  <div>
-    <img src="" alt="" class="mainImage">
-    <p class="cancel">Hair 관련 이미지 첨부</p>
-    <h3 class="imageLogo" style="text-align:center; font-size:110px;"><span class="color_11">Hair & Higher</span></h3>
-  </div>
 
-    <div class="explain">
-      <ul>
-        <li>헤어샵 설명</li><li>헤어샵 설명</li>
-        <li>이용 설명</li><li>이용 설명</li>
-      </ul>
+    <div>
+      <img class="mainImageBack">
+      <img
+        src="../hairSalonProject/image/헤어 화보 1.jpg"
+        class="mainImage">
+      <h3 class="imageLogo" style="text-align:center; font-size: 160px;"><span>Hair & Higher</span></h3>
     </div>
 
-    <div class="service">
-      <img src="" alt="" class="serviceImage">
-      <img src="" alt="" class="serviceImage">
-      <img src="" alt="" class="serviceImage">
-      <p class="cancel">서비스 관련 이미지 첨부하고 저장</p>
-    </div>
+    <h1 class="serviceBtnFont">S e r v i c e s</h1>
+
+    <!-- 캐러셀 -->
+    <div class="carousel">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+      <script>
+        $('.carousel').carousel({
+          interval: 2000 //기본 5초
+        })
+      </script>
+      <div class="container"></div>
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="../hairSalonProject/image/헤어 화보 1.jpg" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../hairSalonProject/image/헤어화보 4.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../hairSalonProject/image/헤어 화보 5.jpg" alt="Third slide">
+          </div>
 
 
+          <!-- 왼쪽 오른쪽 화살표 버튼 -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <!-- <span>Previous</span> -->
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <!-- <span>Next</span> -->
+          </a>
+          <!-- / 화살표 버튼 끝 -->
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li> <!--0번부터시작-->
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ul>
+        </div>
+      </div>
   </div>
 
-
-<script>
+  <script>
     const $bottomBtn = document.querySelector(".moveBottomBtn");
 
-// 버튼 클릭 시 페이지 하단으로 이동
-$bottomBtn.onclick = () => {
-  window.scrollTo({ 
-    top: document.body.scrollHeight, // <- 페이지 총 Height
-    behavior: "smooth" 
-  });
-};
-</script>
-
-
+    // 버튼 클릭 시 페이지 하단으로 이동
+    $bottomBtn.onclick = () => {
+      window.scrollTo({
+        top: document.body.scrollHeight, // <- 페이지 총 Height
+        behavior: "smooth"
+      });
+    };
+  </script>
 
 
 

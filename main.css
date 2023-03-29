@@ -1,3 +1,4 @@
+/* main */
 * {
   margin: 0;
   padding: 0;
@@ -5,20 +6,24 @@
 }
 
 body {
-  height: 3000px;
+  height: 5000px;
+  overflow-x: hidden;
 }
 
 .mainWebName {
   font-family: 'Caveat', cursive;
   margin-top: 10px;
+
 }
 
 #moveBottomBtn {
   text-align: center;
   position: relative;
   bottom: 28px;
-  left: 300px;
+  left: 250px;
+  /* margin: 10px; */
 }
+
 .btns {
   padding: .6rem 1.5rem;
   display: flex;
@@ -29,38 +34,164 @@ body {
   transition: .2s;
   margin-right: .4rem;
 }
-.mainImage {
+
+.mainImageBack {
+  background-color: rgb(200, 182, 166);
   width: 100%;
-  height: 300px;
-  margin-top: 10px;
-  border: 1px solid black;
+  height: 1500px;
+  position: absolute;
+  top: 300px;
 }
 
-.cancel {
-  position: relative;
-  bottom: 300px;
-  line-height: 50%;
+.mainImage {
+  width: 1100px;
+  height: 650px;
+  position: absolute;
+  left: 60px;
+  /* bottom: 780px; */
 }
 
 .imageLogo {
-  color: rgb(8, 0, 0);
-  /* border: 1px solid palevioletred */
-  text-shadow: 1px 1px 1px #1b011b;
+  color: rgb(229, 229, 203);
+  text-shadow: 2px 2px 2px rgb(41, 36, 36);
   font-family: 'Dancing Script', cursive;
   position: relative;
-  bottom: 100px;
-}
-
-.explain {
-  position: relative;
+  top: 550px;
+  /* right: 180px; */
+  --transition-duration: 700ms;
+  --tooltip-margin: 30px;
+  --tooltip-arrow-size: 6px;
+  pointer-events: auto;
+  letter-spacing: normal;
+  line-height: normal;
   text-align: center;
-  bottom: 80px;
+  justify-content: center;
 }
 
-.serviceImage{
-  width: 25%;
-  height: 200px;
-  /* margin-top: 10px; */
-  margin-left: 60px;
+.serviceBtnFont {
+  font-family: 'PT Serif', serif;
+  font-size: 50px;
+  color: white;
+  position: relative;
+  top: 600px;
+  text-align: center;
+}
+
+.carousel {
+  width: 900px;
+  position: relative;
+  justify-content: center;
+  left: 80px;
+  top: 350px;
+  /* letter-spacing: 0.05rem; */
+}
+
+/* designer*/
+.hairMainBack {
+  width: 100%;
+  height: 320px;
+  background: linear-gradient(70deg, rgb(238, 214, 187), rgb(202, 182, 164), rgb(247, 233, 215));
+  /* display: flex;
+  padding: 6; */
+}
+
+.hairExplainTop {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  left: 10px;
+}
+
+.hairExplainMiddle {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 15rem;
+  font-weight: bold;
+  color: beige;
+  opacity: 0.7;
+  float: right;
+  /* bottom: 100px; */
+  /*텍스트 투명하게 만들기*/
+}
+
+.hairExplainBottom {
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+}
+
+.designerBack {
+  background-color: rgb(84, 100, 93);
+  width: 100%;
+  height: 1200px;
+  position: relative;
+  top: 300px;
+}
+
+.designerImgBox {
+  background-color: white;
+  border: var(--container-corvid-border-width, var(--brw, 1px)) solid var(--container-corvid-border-color, rgba(var(--brd, var(--color_15)), var(--alpha-brd, 1)));
+  position: relative;
+  bottom: 500px;
+  box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+  left: 200px;
+  right: 100px;
+  width: 900px;
+  height: 500px;
+  margin-top: 200px;
   border: 1px solid black;
+
+}
+
+.designerBtnFont {
+  font-family: 'PT Serif', serif;
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  position: relative;
+  top: 80px;
+}
+
+
+.card {
+  /* position: relative; */
+  /* top: 710px; */
+  margin-left: 80px;
+  display: inline-block;
+  background-color: white;
+  height: 320px;
+  width: 180px;
+  box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+  position: relative;
+  bottom: 600px;
+}
+
+.card-img-top {
+  position: relative;
+  left: 20px;
+  top: 20px;
+  height: 200px;
+  width: 240px;
+  box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+
+}
+
+.card-title,
+.card-text {
+  position: relative;
+  top: 20px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cardList {
+  position: relative;
+  top: 23px;
+}
+
+.card-body {
+  background-color: white;
 }
