@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ccc5b8;
+}
+
+/* =======================가로 스크롤 ======================*/
+.container {
+  /*가로로 스크롤 수행시킬 대상 div */
+  width: 4000px;
+  overflow-x: scroll;
+  /* height:2000px; */
+  display: flex;
+}
+
+.wrapper {
+  min-width: 100%;
+  /*컨테이너 자체에 가로 스크롤이 생길수 잇도록 내부 요소의 가로 사이즈를 지정 */
+}
+
+::-webkit-scrollbar {
+  /*스크롤바 숨기기*/
+  /* display: none; */
+}
+
+
+
+
+
+
+/* ========================메뉴 버튼======================*/
+.menu ::before {
+  font-family: 'Material Icons';
+  font-size: 1.3em;
+  float: left;
+  clear: left;
+}
+
+/* 구글 플랫 아이콘 */
+.menu label::before {
+  content: '\e5d2';
+}
+
+.menu li:nth-child(1) a::before {
+  content: '\ea70';
+}
+
+.menu li:nth-child(2) a::before {
+  content: '\f8d9';
+}
+
+.menu li:nth-child(3) a::before {
+  content: '\e0cf';
+}
+
+.menu li:nth-child(4) a::before {
+  content: '\e897';
+}
+
+.menu li:nth-child(5) a::before {
+  content: '\e87d';
+}
+
+#expand-menu {
+  /* 체크박스 폼 요소 감추기 */
+  display: none;
+}
+
+#expand-menu:checked~ul {
+  /* 체크박스 체크되었으면 메뉴 목록 표시 - 반응형 표시용 */
+  display: block;
+  height: auto;
+}
+
+.menu {
+  display: block;
+  width: 250px;
+  color: black;
+  border-radius: 20px;
+  padding: 10px;
+  overflow: hidden;
+  /* 반응형 애니메이션용 */
+  transition: all 0.5s ease;
+  /* 반응형 애니메이션 */
+  position: absolute;
+  top: 33px;
+  left: 1200px;
+}
+
+.menu ul {
+  list-style: none;
+  /* margin: 0;
+padding: 0; */
+}
+
+.menu a,
+.menu>label {
+  display: block;
+  height: 50px;
+  padding: 8px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  font-size: 1.3rem;
+
+}
+
+.menu a:hover {
+  /*마우스 올리면 색 변하게 만들기*/
+  color: red;
+}
+
+.menu div {
+  line-height: 0;
+  font-size: 10rem;
+  font-family: 'Noto Sans KR';
+  padding: 0 0 0 40px;
+  /* 아이콘과 텍스트 사이 여백 */
+}
+
+@media screen and (max-width:1023px) {
+  .menu {
+    width: 60px;
+  }
+}
+
+@media screen and (max-width:560px) {
+  .menu #expand-menu:not(:checked)~ul {
+    display: none;
+  }
+}
+
+.menu div {
+  position: absolute;
+  /* 절대 위치로 텍스트 고정 */
+  left: 50px;
+  line-height: 1;
+  font-size: 1.3rem;
+  font-family: 'Noto Sans KR';
+  padding: 0 0 0 30px;
+}
+
+.menu #expand-menu:not(:checked)~ul {
+  /* 메뉴 펼치기 & 줄이기 */
+  display: none;
+}
+
+/* =====================타이핑=================== */
+.bookTest {
+  font-size: 5rem;
+  min-width: 11px;
+  white-space: nowrap;
+  position: relative;
+  color: transparent;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.bookTest::before {
+  content: "BOOK YOUR VALUE";
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  /* text-align: center; */
+  width: 100%;
+  height: 100%;
+  color: black;
+  overflow: hidden;
+  border-right: 1px solid black;
+  animation: typing 6s steps(16) infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 65%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+/* ================================================== */
+.bookingImg1 {
+  width: 255px;
+  height: 300px;
+  /* display: inline-block; */
+  position: relative;
+  top: 200px;
+  /* left: 20px; */
+  margin-left: 25px;
+  margin-right: 25px;
+  opacity: 90%;
+
+}
+
+.bookingImg1:hover {
+  background-color: black;
+}
+
+.bookingImg2 {
+  width: 255px;
+  height: 300px;
+  /* display: inline-block; */
+  position: relative;
+  top: 130px;
+  /* left: 20px; */
+  margin-left: 25px;
+  margin-right: 25px;
+  opacity: 90%;
+}
+
+.text1 {
+  display: inline-block;
+  position: relative;
+  margin-left: 25px;
+  margin-right: 520px;
+  top: 200px;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.month2 {
+  display: inline-block;
+  position: relative;
+  margin-left: 25px;
+  margin-right: 300px;
+  top: 130px;
+}

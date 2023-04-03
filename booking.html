@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예약페이지</title>
+  <!-- 메뉴 아이콘 -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="booking.css">
+</head>
+
+<body>
+  <!-- 메뉴바 -->
+  <div class="menu">
+    <label for="expand-menu">
+      <div>MENU</div>
+    </label>
+    <input type="checkbox" id="expand-menu" name="expand-menu">
+    <ul>
+      <li><a href="service.html" class="item">
+          <div>Services</div>
+        </a></li>
+      <li><a href="designer1.html" class="item">
+          <div>Designers</div>
+        </a></li>
+      <li><a href="reservation.html" class="item">
+          <div>Reservation</div>
+        </a></li>
+      <li><a href="contact.html" class="item">
+          <div>Contact</div>
+        </a></li>
+    </ul>
+  </div>
+
+  <!-- 첫번째 섹션 -->
+  <h1 class="bookTest">BOOK YOUR VALUE</h1>
+
+  <!-- 가로 스크롤 -->
+  <div class="container" style="height: 700px;">
+
+
+    <div class="wrapper">
+      <div class="item">
+        <img class="bookingImg1" src="image/booking1.jpg">
+
+
+        <img class="bookingImg2" src="image/booking2.jpg">
+        <img class="bookingImg1" src="image/booking3.jpg">
+        <img class="bookingImg2" src="image/booking4.jpg">
+        <img class="bookingImg1" src="image/booking5.jpg">
+        <img class="bookingImg2" src="image/booking6.jpg">
+        <img class="bookingImg1" src="image/booking7.jpg">
+        <img class="bookingImg2" src="image/booking8.jpg">
+        <img class="bookingImg1" src="image/booking9.jpg">
+        <img class="bookingImg2" src="image/booking10.jpg">
+        <img class="bookingImg1" src="image/booking12.jpg">
+        <img class="bookingImg2" src="image/booking11.jpg">
+      </div>
+      <div class="text1">
+        <p>01</p>
+        <p>날짜를 선택하세요</p>
+      </div>
+    </div>
+
+
+
+    <div class="wrapper">
+
+    </div>
+
+
+
+
+
+    <div class="wrapper">
+    </div>
+
+
+
+  </div>
+  </div>
+  <script>
+    //스크립트로 하기
+    window.onload = () => {
+      function scrollH(e) {
+        e.preventDefault();
+        e = window.event || e;
+        let delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        console.log(document.querySelector('.container').scrollLeft);
+        console.log(delta);
+        console.log((delta * 1000));
+        document.querySelector('.container').scrollLeft -= (delta * 1000);
+      }
+      if (document.querySelector('.container').addEventListener) {
+        document.querySelector('.container').addEventListener('mousewheel', scrollH, false);
+        document.querySelector('.container').addEventListener('DOMMouseScroll', scrollH, false);
+      }
+    }
+  </script>
+
+
+  <!-- 이미지 마우스 오버 -->
+  <script>
+
+
+  </script>
+
+
+
+</body>
+
+</html>
