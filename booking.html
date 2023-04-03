@@ -40,44 +40,68 @@
   <!-- 가로 스크롤 -->
   <div class="container" style="height: 700px;">
 
+    <div class="wrapper">
+      <form action="">
+        <table class="Calendar">
+          <thead>
+            <tr>
+              <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
+              <td colspan="5">
+                <span id="calYear"></span> /
+                <span id="calMonth"></span>
+              </td>
+              <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
+            </tr>
+            <tr>
+              <td>Sun</td>
+              <td>Mon</td>
+              <td>Tue</td>
+              <td>Wed</td>
+              <td>Thu</td>
+              <td>Fri</td>
+              <td>Sat</td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+
+        <select name="bookName">
+          <option value="designer" selected>--SELECT DESIGNER--</option>
+          <option value="designer">KIM</option>
+          <option value="designer">CHOI</option>
+        </select>
+
+
+        <img class="deImg" src="image/디자이너6.jpg" style="height: 400px;">
+        <img class="deImg" src="image/디자이너7.jpg">
+
+        <div class="inputText">
+          <input class="input" type="text" required> <!-- requier 유효성 검사할 때 필요 -->
+          <label class="label">Name</label><br>
+        </div>
+        <div class="inputText">
+          <input class="input" type="text" required>
+          <label class="label">Email</label><br>
+        </div>
+        <div class="inputText">
+          <input class="input" type="text" required>
+          <label class="label">PhoneNumber</label>
+        </div>
+
+        <button type="submit">Submit</button>
+    </div>
+    </form>
+
+
+
+
+
+
 
     <div class="wrapper">
-      <div class="item">
-        <img class="bookingImg1" src="image/booking1.jpg">
-
-
-        <img class="bookingImg2" src="image/booking2.jpg">
-        <img class="bookingImg1" src="image/booking3.jpg">
-        <img class="bookingImg2" src="image/booking4.jpg">
-        <img class="bookingImg1" src="image/booking5.jpg">
-        <img class="bookingImg2" src="image/booking6.jpg">
-        <img class="bookingImg1" src="image/booking7.jpg">
-        <img class="bookingImg2" src="image/booking8.jpg">
-        <img class="bookingImg1" src="image/booking9.jpg">
-        <img class="bookingImg2" src="image/booking10.jpg">
-        <img class="bookingImg1" src="image/booking12.jpg">
-        <img class="bookingImg2" src="image/booking11.jpg">
-      </div>
-      <div class="text1">
-        <p>01</p>
-        <p>날짜를 선택하세요</p>
-      </div>
     </div>
-
-
-
-    <div class="wrapper">
-
-    </div>
-
-
-
-
-
-    <div class="wrapper">
-    </div>
-
-
 
   </div>
   </div>
@@ -90,8 +114,8 @@
         let delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
         console.log(document.querySelector('.container').scrollLeft);
         console.log(delta);
-        console.log((delta * 1000));
-        document.querySelector('.container').scrollLeft -= (delta * 1000);
+        console.log((delta * 200));
+        document.querySelector('.container').scrollLeft -= (delta * 200);
       }
       if (document.querySelector('.container').addEventListener) {
         document.querySelector('.container').addEventListener('mousewheel', scrollH, false);
@@ -103,9 +127,121 @@
 
   <!-- 이미지 마우스 오버 -->
   <script>
+    $(".hover").mouseleave(
+      function () {
+        $(this).removeClass("hover");
+      }
+    );
+  </script>
 
+  <!-- 달력 -->
+  <script>
+    window.addEventListener('load', function () { /*가로 스크롤 스크립트랑 겹치는 거 해결하기*/
+      Calendar();
+    });
+
+    let nowMonth = new Date();  // 현재 달을 페이지를 로드한 날의 달로 초기화
+    let today = new Date();     // 페이지를 로드한 날짜를 저장
+    today.setHours(0, 0, 0, 0);    // 비교 편의를 위해 today의 시간을 초기화
+
+    // 달력 생성 : 해당 달에 맞춰 테이블을 만들고, 날짜를 채워 넣는다.
+    function Calendar() {
+
+      let firstDate = new Date(nowMonth.getFullYear(), nowMonth.getMonth(), 1);     // 이번달 1일
+      let lastDate = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, 0);  // 이번달 마지막날
+
+      let tbody_Calendar = document.querySelector(".Calendar > tbody");
+      document.getElementById("calYear").innerText = nowMonth.getFullYear();             // 연도 숫자 갱신
+      document.getElementById("calMonth").innerText = leftPad(nowMonth.getMonth() + 1);  // 월 숫자 갱신
+
+      while (tbody_Calendar.rows.length > 0) {                        // 이전 출력결과가 남아있는 경우 초기화
+        tbody_Calendar.deleteRow(tbody_Calendar.rows.length - 1);
+      }
+
+      let nowRow = tbody_Calendar.insertRow();        // 첫번째 행 추가           
+
+      for (let j = 0; j < firstDate.getDay(); j++) {  // 이번달 1일의 요일만큼
+        let nowColumn = nowRow.insertCell();        // 열 추가
+      }
+
+      for (let nowDay = firstDate; nowDay <= lastDate; nowDay.setDate(nowDay.getDate() + 1)) {   // day는 날짜를 저장하는 변수, 이번달 마지막날까지 증가시키며 반복  
+
+        let nowColumn = nowRow.insertCell();        // 새 열을 추가하고
+        nowColumn.innerText = leftPad(nowDay.getDate());      // 추가한 열에 날짜 입력
+
+
+        if (nowDay.getDay() == 0) {                 // 일요일인 경우 글자색 빨강으로
+          nowColumn.style.color = "red";
+        }
+        if (nowDay.getDay() == 6) {                 // 토요일인 경우 글자색 파랑으로 하고
+          nowColumn.style.color = "blue";
+          nowRow = tbody_Calendar.insertRow();    // 새로운 행 추가
+        }
+
+
+        if (nowDay < today) {                       // 지난날인 경우
+          nowColumn.className = "pastDay";
+        }
+        else if (nowDay.getFullYear() == today.getFullYear() && nowDay.getMonth() == today.getMonth() && nowDay.getDate() == today.getDate()) { // 오늘인 경우           
+          nowColumn.className = "today";
+          nowColumn.onclick = function () { choiceDate(this); }
+        }
+        else {                                      // 미래인 경우
+          nowColumn.className = "futureDay";
+          nowColumn.onclick = function () { choiceDate(this); }
+        }
+      }
+    }
+
+    // 날짜 선택
+    function choiceDate(nowColumn) {
+      if (document.getElementsByClassName("choiceDay")[0]) {                              // 기존에 선택한 날짜가 있으면
+        document.getElementsByClassName("choiceDay")[0].classList.remove("choiceDay");  // 해당 날짜의 "choiceDay" class 제거
+      }
+      nowColumn.classList.add("choiceDay");           // 선택된 날짜에 "choiceDay" class 추가
+    }
+
+    // 이전달 버튼 클릭
+    function prevCalendar() {
+      nowMonth = new Date(nowMonth.getFullYear(), nowMonth.getMonth() - 1, nowMonth.getDate());   // 현재 달을 1 감소
+      Calendar();    // 달력 다시 생성
+    }
+    // 다음달 버튼 클릭
+    function nextCalendar() {
+      nowMonth = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, nowMonth.getDate());   // 현재 달을 1 증가
+      Calendar();    // 달력 다시 생성
+    }
+
+    // input값이 한자리 숫자인 경우 앞에 '0' 붙혀주는 함수
+    function leftPad(value) {
+      if (value < 10) {
+        value = "0" + value;
+        return value;
+      }
+      return value;
+    }
+  </script>
+
+
+  <!-- input -->
+
+  <script>
+    function splitEmail(email) {
+      let stdIndex = email.indexOf("@");
+      if (stdIndex != -1) {
+        console.log("아이디 : " + email.substring(0, stdIndex));
+        console.log("도메인 : " + email.substring(stdIndex + 1, email.length));
+      } else {
+        alert("메일 형식이 잘못되었습니다.");
+      }
+    }
 
   </script>
+
+
+
+
+
 
 
 

@@ -2,16 +2,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+}
+
+body {
   background-color: #ccc5b8;
+  
 }
 
 /* =======================가로 스크롤 ======================*/
 .container {
   /*가로로 스크롤 수행시킬 대상 div */
-  width: 4000px;
+  width: 1250px;
   overflow-x: scroll;
-  /* height:2000px; */
   display: flex;
+  height: 100px;
+
 }
 
 .wrapper {
@@ -21,18 +27,13 @@
 
 ::-webkit-scrollbar {
   /*스크롤바 숨기기*/
-  /* display: none; */
+  display: none;
 }
-
-
-
-
-
 
 /* ========================메뉴 버튼======================*/
 .menu ::before {
   font-family: 'Material Icons';
-  font-size: 1.3em;
+  font-size: 1.2rem;
   float: left;
   clear: left;
 }
@@ -78,14 +79,14 @@
   width: 250px;
   color: black;
   border-radius: 20px;
-  padding: 10px;
+  padding: 25px;
   overflow: hidden;
   /* 반응형 애니메이션용 */
   transition: all 0.5s ease;
   /* 반응형 애니메이션 */
   position: absolute;
-  top: 33px;
-  left: 1200px;
+  top: 10px;
+  /* right: 10px; */
 }
 
 .menu ul {
@@ -97,12 +98,12 @@ padding: 0; */
 .menu a,
 .menu>label {
   display: block;
-  height: 50px;
-  padding: 8px;
+  height: 30px;
+  padding: 5px;
   cursor: pointer;
   color: black;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1rem;
 
 }
 
@@ -136,7 +137,7 @@ padding: 0; */
   /* 절대 위치로 텍스트 고정 */
   left: 50px;
   line-height: 1;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-family: 'Noto Sans KR';
   padding: 0 0 0 30px;
 }
@@ -154,31 +155,33 @@ padding: 0; */
   position: relative;
   color: transparent;
   top: 50%;
-  left: 55%;
+  left: 60%;
   transform: translate(-50%, -50%);
 }
 
 .bookTest::before {
   content: "BOOK YOUR VALUE";
   position: absolute;
-  top: 100px;
-  left: 150px;
+  top: 60px;
+  left: 70px;
   /* text-align: center; */
   width: 100%;
   height: 100%;
   color: black;
   overflow: hidden;
   border-right: 1px solid black;
-  animation: typing 6s steps(16) infinite;
+  animation: typing 6s steps(13) infinite;
 }
 
 @keyframes typing {
+
+  /*타이핑 커서 어디까지*/
   0% {
     width: 0%;
   }
 
   50% {
-    width: 65%;
+    width: 62%;
   }
 
   100% {
@@ -186,51 +189,150 @@ padding: 0; */
   }
 }
 
-/* ================================================== */
-.bookingImg1 {
-  width: 255px;
-  height: 300px;
+/* ========================달력======================= */
+td {
+  width: 50px;
+  height: 50px;
+  /* margin-top: 100px; */
+}
+
+.Calendar {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 80px;
+  position: relative;
+  top: 70px;
+  margin-left: 80px;
+  margin-right: auto;
+}
+
+.Calendar>thead>tr:first-child>td {
+  font-weight: bold;
+}
+
+.Calendar>thead>tr:last-child>td {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-weight: bold;
+  border-radius:20px;
+}
+
+.pastDay {
+  background-color: rgb(219, 219, 219);
+  border-radius: 10px;
+}
+
+.today {
+  background-color: #fffdc0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.futureDay {
+  cursor: pointer;
+}
+
+.futureDay.choiceDay,
+.today.choiceDay {
+  background-color: #b3d1fe;
+  border-radius: 100%;
+  color: rgb(31, 31, 31);
+  cursor: pointer;
+}
+
+/* 폼 요소들 */
+select {
   /* display: inline-block; */
   position: relative;
-  top: 200px;
-  /* left: 20px; */
-  margin-left: 25px;
-  margin-right: 25px;
-  opacity: 90%;
-
+  bottom: 300px;
+  left: 760px;
+  height: 34px;
+  background-color: #192941;
+  color: white;
+  font-weight: bold;
+  width: 195px;
+  border-radius: 10px;
+  /* border: #b3d1fe; */
+  border: beige;
+  text-align: center;
+  font-size: 14px;
+  -webkit-appearance: none; /*화살표 안 뜨게 하기*/
+  box-shadow: 2px 2px 1px 1px rgb(97, 123, 153);
 }
-
-.bookingImg1:hover {
-  background-color: black;
-}
-
-.bookingImg2 {
-  width: 255px;
-  height: 300px;
-  /* display: inline-block; */
+.inputText {
   position: relative;
-  top: 130px;
-  /* left: 20px; */
-  margin-left: 25px;
-  margin-right: 25px;
-  opacity: 90%;
+  width: 300px;
+  margin-left: 120px;
+  margin-top: 100px;
+  bottom: 820px;
+  left: 1200px;
+
 }
 
-.text1 {
-  display: inline-block;
+.input {
+  font-size: 15px;
+  color: #222222;
+  width: 300px;
+  border: none;
+  border-bottom: solid #222222 1px;
+  padding-bottom: 10px;
+  text-align: center;
   position: relative;
-  margin-left: 25px;
-  margin-right: 520px;
-  top: 200px;
-  text-align: left;
-  font-size: 1.5rem;
-  font-weight: 600;
+  background: none;
+  z-index: 5;
 }
 
-.month2 {
-  display: inline-block;
+.input::placeholder { color: #aaaaaa; }
+.input:focus { outline: none; }
+
+.label {
+position: absolute;
+color: #222222;
+left: 50%;
+transform: translateX(-50%);
+font-size: 20px;
+bottom: 8px;
+transition: all .2s;
+}
+
+.input:focus ~ label, .input:valid ~ label {
+font-size: 16px;
+bottom: 40px;
+color: #666;
+font-weight: bold;
+}
+
+.input:focus ~ span, .input:valid ~ span {
+width: 100%;
+}
+
+
+/* ======================이미지==================== */
+.deImg {
+  text-align: center;
+  margin-left: 30px;
+  margin-right: auto;
   position: relative;
-  margin-left: 25px;
-  margin-right: 300px;
-  top: 130px;
+  bottom: 350px;
+  width: 320px;
+  left: 300px;
+  opacity: 88%;
+}
+button{
+  position: relative;
+  bottom: 725px;
+  left: 1420px;
+  width: 100px;
+  height: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #192941;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 2px 2px 1px 1px rgb(97, 123, 153);
+  transition-duration: 0.3s;
+}
+button:active{
+  box-shadow: none;
 }
