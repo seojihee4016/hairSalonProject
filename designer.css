@@ -38,15 +38,15 @@ header {
     text-align: center;
     position: relative;
     font-size: 20px;
-}
 
+}
 .mainLine {
     /* text-transform: uppercase; */
     border-bottom: 2px solid #2f2f2f;
     border-top: 2px solid #2f2f2f;
     padding: 14px 0 14px 0;
     position: relative;
-    bottom: 40px;
+    top: 40px;
 }
 
 .designerText {
@@ -71,6 +71,8 @@ p {
     vertical-align: top;
     margin-bottom: 50px;
     transition: all .7s;
+    position: relative;
+    top:10px
 }
 
 .collumn+.collumn {
@@ -265,10 +267,26 @@ p {
     width: 100%;
     margin-top: 40px;
 }
+.media:hover{
+    -webkit-filter: grayscale(0%);
+    -webkit-transition: .5s ease-in-out;
+    -moz-filter: grayscale(0%);
+    -moz-transition: .5s ease-in-out;
+    -o-filter: grayscale(0%);
+    -o-transition: .5s ease-in-out;
+    cursor: pointer;
+}
+#color, #color2:hover{ /*마우스 오버시 컬러로 변환*/
+    -webkit-filter: grayscale(0%);
+    -webkit-transition: .5s ease-in-out;
+    -moz-filter: grayscale(0%);
+    -moz-transition: .5s ease-in-out;
+    -o-filter: grayscale(0%);
+    -o-transition: .5s ease-in-out;
+    cursor: pointer;
+}
 
-/*________________________________________________________________________________________________________________________________*/
-/*MEDIAQUERIES*/
-@media only all and (max-width: 1300px) {
+/* @media only all and (max-width: 1300px) {
     .weatherforcastbox {
         display: none;
     }
@@ -305,7 +323,7 @@ p {
         line-height: 54px;
         overflow: hidden;
     }
-}
+} */
 
 .reserMoveText {
     position: relative;
@@ -320,12 +338,20 @@ p {
 .reserMove:hover {
     color: red;
 }
-
+/* #color:hover{
+        -webkit-filter: grayscale(0%);  
+        -webkit-transition: .5s ease-in-out;      
+        -moz-filter: grayscale(0%);     
+        -moz-transition: .5s ease-in-out;      
+        -o-filter: grayscale(0%);     
+        -o-transition: .5s ease-in-out;      
+        background-image: image();   
+} */
 
 /* ========================메뉴 버튼======================*/
 .menu ::before {
     font-family: 'Material Icons';
-    font-size: 1.3em;
+    font-size: 1.2rem;
     float: left;
     clear: left;
 }
@@ -371,31 +397,32 @@ p {
     width: 250px;
     color: black;
     border-radius: 20px;
-    padding: 10px;
+    padding: 25px;
     overflow: hidden;
     /* 반응형 애니메이션용 */
     transition: all 0.5s ease;
     /* 반응형 애니메이션 */
-    position: relative;
-    bottom: 130px;
-    left: 1350px;
+    position: absolute;
+    top: 0px;
+    bottom: 10px;
+    /* right: 10px; */
 }
 
 .menu ul {
     list-style: none;
     /* margin: 0;
-    padding: 0; */
+  padding: 0; */
 }
 
 .menu a,
 .menu>label {
     display: block;
-    height: 50px;
-    padding: 8px;
+    height: 30px;
+    padding: 5px;
     cursor: pointer;
     color: black;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1rem;
 
 }
 
@@ -429,7 +456,7 @@ p {
     /* 절대 위치로 텍스트 고정 */
     left: 50px;
     line-height: 1;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-family: 'Noto Sans KR';
     padding: 0 0 0 30px;
 }
