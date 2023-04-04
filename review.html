@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리뷰 페이지</title>
+  <!-- mainWebName 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <!-- 메뉴 아이콘 -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="review.css">
+</head>
+
+<body>
+  <p class="webName">HairLogo</p>
+
+  <!-- 메뉴바 -->
+  <div class="menu">
+    <label for="expand-menu">
+      <div>MENU</div>
+    </label>
+    <input type="checkbox" id="expand-menu" name="expand-menu">
+    <ul>
+      <li><a href="review.html" class="item">
+          <div>Review</div>
+        </a></li>
+      <li><a href="designer1.html" class="item">
+          <div>Designer</div>
+        </a></li>
+      <li><a href="booking.html" class="item">
+          <div>Reservation</div>
+        </a></li>
+      <li><a href="contact.html" class="item">
+          <div>Contact</div>
+        </a></li>
+    </ul>
+  </div>
+
+  <!--팝업창 안-->
+  <div id="popup">
+    <div id="popmenu">
+      <div id="starFill">
+        <div class="star">
+
+        </div>
+      </div>
+      <div class="reviewInput">
+        <textarea name="" maxlength="100" placeholder="여기에 리뷰 작성된 거 보여주기" required></textarea>
+      </div>
+      <div class="exit">닫기</div>
+    </div>
+  </div>
+  <!-- 팝업 밖 -->
+  <img id="reviewImg" src="image/booking1.jpg" alt="">
+
+
+
+
+
+
+
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- 리뷰 폼 -->
+
+  <form action="">
+    <div id="starFill">
+      <div class="star">
+        <input type="radio" name="rating" value="5" id="rate1"><label for="rate1">⭐</label>
+        <input type="radio" name="rating" value="4" id="rate2"><label for="rate2">⭐</label>
+        <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">⭐</label>
+        <input type="radio" name="rating" value="2" id="rate4"><label for="rate4">⭐</label>
+        <input type="radio" name="rating" value="1" id="rate5"><label for="rate5">⭐</label>
+      </div>
+  </form>
+  <div class="reviewInput">
+    <textarea name="" maxlength="100" placeholder="여기에 리뷰 작성" required></textarea>
+  </div>
+  <button class="" onclick="alert('등록이 완료되었습니다.')">등록</button>
+  </form>
+
+
+
+
+
+
+
+  <!-- 팝업창 -->
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $("#reviewImg").click(function () {
+        $("#popup").fadeIn();
+      });
+      $("#popup").click(function () {
+        $("#popup").fadeOut();
+      });
+    });
+  </script>
+
+
+
+</body>
+
+</html>
