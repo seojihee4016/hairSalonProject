@@ -1,22 +1,25 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>리뷰 페이지</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>예약 페이지</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;500&family=Abel&family=Oswald:wght@400;600&family=Merriweather:ital,wght@0,700&family=Bungee&family=Architects+Daughter&family=Noto+Sans&family=Open+Sans:wght@300;700&family=Roboto:wght@100;300;400&display=swap"
+    rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- mainWebName 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+
   <!-- 메뉴 아이콘 -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="review.css">
 </head>
 
-<body>
-  <p class="webName">HairLogo</p>
+<body class="scroll">
 
   <!-- 메뉴바 -->
   <div class="menu">
@@ -40,34 +43,217 @@
     </ul>
   </div>
 
-  <!--팝업창 안-->
-  <div id="popup">
-    <div id="popmenu">
-      <div id="starFill">
-        <div class="star">
-
-        </div>
-      </div>
-      <div class="reviewInput">
-        <textarea name="" maxlength="100" placeholder="여기에 리뷰 작성된 거 보여주기" required></textarea>
-      </div>
-      <div class="exit">닫기</div>
-    </div>
-  </div>
-  <!-- 팝업 밖 -->
-  <img id="reviewImg" src="image/booking1.jpg" alt="">
 
 
 
+  <main>
+    <section class="container">
+      <textAll>
+        <h1 class="webName">Hair Logo</h1>
+        <div id="subtitle" class="text" style="font-size: 2rem;">WRITE YOUR REVIEW</div>
 
+        <!-- 메인 이미지 부분 -->
+        <div id="mainImage">
 
+          <!-- 메인 서브 이미지 부분 -->
+          <div class="submainImg">
+            <img id="image">
+            <span id="transcontainer"><img id="transimage"></span> <!-- 메인 이미지에서 서브 이미지로 바뀌기 -->
+          </div>
 
+          <div class="images">
+            <div class="image-select">
+              <img class="mainImg" src="image/booking9.jpg">
+            </div>
+            <div class="image-select">
+              <img class="mainImg" src="image/리뷰1.png">
+            </div>
+            <div class="image-select">
+              <img class="mainImg" src="image/리뷰2.jpg">
+            </div>
+            <div class="image-select">
+              <img class="mainImg" src="image/리뷰3.jpg">
+            </div>
+            <div class="image-select">
+              <img class="mainImg" src="image/리뷰5.jpg">
+            </div>
+            <div class="image-select">
+              <img class="mainImg" src="image/리뷰4.jpg">
+            </div>
+          </div>
+          <div id="selectedImageCaption"></div> <!-- 이미지 클릭하면 바뀌게 -->
+    </section>
 
+    <section class="container">
+      <textAll>
+        <div class="text" style="font-size: 2rem; font-weight: bold;">Read the reviews and decide.</div>
+      </textAll>
+      <textAll id="infoinventions">
+        <h3>REVIEWS</h3>
+        <ul id="Card">
+          <li>
+            <div class="flip-card">
+              <input type="checkbox" id="btnControl1" class="btnControl" />
+              <label class="flip-card-inner" for="btnControl1">
+                <div class="flip-card-front">
+                  <img class="flip-card-front-image" src="image/사용자.jpg">
+                </div>
+                <div class="flip-card-back">
+                  <h4 id="userName">nick</h4>
+                  <p>GOOD</p>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <input type="checkbox" id="btnControl2" class="btnControl" />
+              <label class="flip-card-inner" for="btnControl2">
+                <div class="flip-card-front">
+                  <img src="image/사용자.jpg" alt="2 Hydroelectric Power Plant">
+                </div>
+                <div class="flip-card-back">
+                  <h4 id="userName">KIM</h4>
+                  <p>GOOD</p>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <input type="checkbox" id="btnControl3" class="btnControl" />
+              <label class="flip-card-inner" for="btnControl3">
+                <div class="flip-card-front">
+                  <img src="image/사용자.jpg">
+                </div>
+                <div class="flip-card-back">
+                  <h4 id="userName">BABAMBA</h4>
+                  <p>GOOD</p>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <input type="checkbox" id="btnControl4" class="btnControl" />
+              <label class="flip-card-inner" for="btnControl4">
+                <div class="flip-card-front">
+                  <img class="flip-card-front-image" src="image/사용자.jpg">
+                </div>
+                <div class="flip-card-back">
+                  <h4 id="userName">HARRY</h4>
+                  <p>GOOD</p>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <input type="checkbox" id="btnControl5" class="btnControl" />
+              <label class="flip-card-inner" for="btnControl5">
+                <div class="flip-card-front">
+                  <img src="image/사용자.jpg">
+                </div>
+                <div class="flip-card-back">
+                  <h4 id="userName">UMMM</h4>
+                  <p>GOOD</p>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <input type="checkbox" id="btnControl6" class="btnControl" />
+              <label class="flip-card-inner" for="btnControl6">
+                <div class="flip-card-front">
+                  <img src="image/사용자.jpg">
+                </div>
+                <div class="flip-card-back">
+                  <h4 id="userName">HI</h4>
+                  <p>GOOD</p>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <input type="checkbox" id="btnControl7" class="btnControl" />
+              <label class="flip-card-inner" for="btnControl7">
+                <div class="flip-card-front">
+                  <img src="image/사용자.jpg" alt="7 Tesla valve">
+                </div>
+                <div class="flip-card-back">
+                  <h4 id="userName">HEYYY</h4>
+                  <p>GOOD</p>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <input type="checkbox" id="btnControl8" class="btnControl" />
+              <label class="flip-card-inner" for="btnControl8">
+                <div class="flip-card-front">
+                  <img src="image/사용자.jpg">
+                </div>
+                <div class="flip-card-back">
+                  <h4 id="userName">GOOOOOGLE</h4>
+                  <p>GOOD</p>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <input type="checkbox" id="btnControl9" class="btnControl" />
+              <label class="flip-card-inner" for="btnControl9">
+                <div class="flip-card-front">
+                  <img src="image/사용자.jpg" alt="10 Automaton Patents Remote Controlled boat">
+                </div>
+                <div class="flip-card-back">
+                  <h4 id="userName">RARARA</h4>
+                  <p>GOOD</p>
+                </div>
+              </label>
+            </div>
+          </li>
 
+          <li>
+            <div class="flip-card">
+              <input type="checkbox" id="btnControl10" class="btnControl" />
+              <label class="flip-card-inner" for="btnControl10">
+                <div class="flip-card-front">
+                  <img src="image/사용자.jpg">
+                </div>
+                <div class="flip-card-back">
+                  <h4 id="userName">TACO</h4>
+                  <p>GOOD</p>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <input type="checkbox" id="btnControl11" class="btnControl" />
+              <label class="flip-card-inner" for="btnControl11">
+                <div class="flip-card-front">
+                  <img src="image/사용자.jpg">
+                </div>
+                <div class="flip-card-back">
+                  <h4 id="userName">LEE</h4>
+                  <p>GOOD</p>
+                </div>
+              </label>
+            </div>
+          </li>
+        </ul>
 
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <!-- 리뷰 폼 -->
+      </textAll>
+      <br><br><br><br><br><br><br><br>
 
+      
+      <!-- 리뷰 폼 -->
+      <div class="text" style="font-size: 2rem; font-weight: bold;" >YOUR REVIEW!</div>
   <form action="">
     <div id="starFill">
       <div class="star">
@@ -81,30 +267,85 @@
   <div class="reviewInput">
     <textarea name="" maxlength="100" placeholder="여기에 리뷰 작성" required></textarea>
   </div>
-  <button class="" onclick="alert('등록이 완료되었습니다.')">등록</button>
+  <button class="" onclick="alert('등록이 완료되었습니다.')">등록</button><br><br><br><br><br><br><br><br><br><br>
   </form>
-
-
-
-
-
-
-
-  <!-- 팝업창 -->
-  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  
+  </main>
 
   <script>
-    $(document).ready(function () {
-      $("#reviewImg").click(function () {
-        $("#popup").fadeIn();
-      });
-      $("#popup").click(function () {
-        $("#popup").fadeOut();
-      });
-    });
-  </script>
+    //이미지 클릭하면 바뀌게
+    var link = document.getElementById('picture');
+    function changeColor(e) {
+      if (e.target == link) return;
+      e.target.style.backgroundColor = 'white';
+      link = e.target;
+    }
 
+    function selectImage(e) {
+      let bigImage = document.getElementById('image');
+      bigImage.src = e.target.src;
+    }
+
+    function mouseMovement(event) {
+      if (document.documentElement.clientWidth <= 500) return;
+      let bigImage = document.getElementById('image');
+      let transcontainer = document.getElementById('transcontainer');
+      if (event.x >= bigImage.x && event.x <= (bigImage.x + bigImage.width) && event.y >= bigImage.y && event.y <= (bigImage.y + bigImage.height)) {
+        transcontainer.style.display = 'none';
+      }
+    }
+
+    /*카드 전환효과*/
+    function CheckboxChanged(e) {
+      e.preventDefault();
+      let inner = e.target.parentElement.getElementsByClassName('flip-card-inner')[0];
+      inner.offsetHeight;
+      if (e.target.checked) {
+        inner.classList.add('flipcard'); /*앞부분*/
+        inner.classList.remove('-flipcard'); /*뒷부분*/
+      }
+      else {
+        inner.classList.add('-flipcard');
+        inner.classList.remove('flipcard');
+      }
+    }
+
+    function appendHighlight(e) {
+    }
+    function removeHighlight(e) {
+    }
+
+
+    // 메인 이미지 부분
+    window.onload = function initialize() {
+      if (document.readyState === 'complete') {
+        
+        //시작하면 메인 이미지 띄우기
+        document.getElementById('image').src = "image/booking2.jpg"
+        document.getElementById('selectedImageCaption').innerHTML =
+          document.getElementsByClassName('image-select')[0].firstElementChild.alt;
+
+        //클릭하면 이미지 변하게
+        document.addEventListener('mousemove', mouseMovement);
+
+        //카드 전환
+        Array.from(document.getElementsByClassName('btnControl'), item => {
+          item.addEventListener('change', e => {
+            CheckboxChanged(e);
+          });
+        });
+
+        Array.from(document.getElementsByClassName('image-select'), item => {
+          item.addEventListener('click', selectImage, false);
+          item.addEventListener('mouseover', appendHighlight, false);
+          item.addEventListener('mouseout', removeHighlight, false);
+        });
+      }
+    }
+
+
+
+  </script>
 
 
 </body>

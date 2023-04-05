@@ -4,8 +4,19 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+  width: auto;
+  overflow: hidden;
+}
+
+html,
 body {
-  height: 1000px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f9f7f1;
 }
 
 /* ========================메뉴 버튼======================*/
@@ -69,8 +80,6 @@ body {
 
 .menu ul {
   list-style: none;
-  /* margin: 0;
-padding: 0; */
 }
 
 .menu a,
@@ -82,7 +91,6 @@ padding: 0; */
   color: black;
   text-decoration: none;
   font-size: 1rem;
-
 }
 
 .menu a:hover {
@@ -125,77 +133,331 @@ padding: 0; */
   display: none;
 }
 
-/* ========================웹페이지 로고======================*/
+/* ========================메인========================= */
 .webName {
   font-family: 'Caveat', cursive;
   color: #000000;
-  font-size: 4.5rem;
+  font-size: 6rem;
   text-align: center;
 }
 
-/* ==========================리뷰 이미지 팝업 레이어==========================*/
-#reviewImg {
-  width: 150px;
-  height: 150px;
+.scroll {
+  position: relative;
+}
+
+main {
+  width: 100%;
+  left: 0;
+  background-color: white;
+  overflow: auto;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Mulish', sans-serif;
+}
+
+#picture {
+  background-color: white;
+}
+
+section {
+  display: grid;
+  /*grid를 줘서 자식 요소들이 block이 되게*/
+}
+
+main>section>textAll {
+  /*모든 텍스트들*/
   display: flex;
-  margin-left: 100px;
-  margin-top: 100px;
-  border-radius: 30px;
+  justify-self: center;
+  align-items: center;
+  flex-direction: column;
+  /*배치되는 축의 방향 세로로 설정*/
+  width: 883px;
+  margin: 100px 5% 0 5%;
+}
+
+textAll>h1 {
+  /*메인 로고*/
+  font-size: 85px;
+  position: relative;
+  bottom: 70px;
+}
+
+textAll>h3 {
+  /*리뷰 보여주는 메인 텍스트 부분*/
+  width: inherit;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+textAll ul {
+  width: inherit;
+}
+
+textAll>ul li {
+  margin-top: 20px;
+  line-height: 35px;
+  /*li 간격*/
+  width: 97%;
+  font-size: 19px;
+}
+
+#more textAll {
+  /*하단*/
+  margin-bottom: 50px;
+}
+
+#subtitle {
+  margin-bottom: 50px;
+}
+
+.text {
+  /*Read the reviews and decide 부분*/
+  font-family: 'Architects Daughter', cursive;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  position: relative;
+  top: 60px;
+
+}
+
+/*images*/
+#image {
+  max-width: 767px;
+  height: auto;
+}
+
+#image {
+  opacity: 1;
+}
+
+#img-caption {
+  width: 0px;
+  margin: 10px;
+  opacity: 0;
+  display: none;
+}
+
+#mainImage {
+  display: grid;
+  grid-template-columns: 767px 75px;
+  width: 100%;
+  height: auto;
+  caret-color: transparent;
+}
+
+.submainImg {
+  position: relative;
+  display: flex;
+  z-index: 1;
+  height: 650px;
+}
+
+.submainImg img {
+  position: relative;
+  left: 155px;
+  width: 80%;
+
+}
+
+#selectedImage {
+  width: 100%;
+  height: auto;
+}
+
+.hidebtn {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   cursor: pointer;
 }
 
-#reviewImg:hover {
-  transform: scale(1.2);
+.hidebtn:hover {
+  transform: rotateX(1turn);
 }
 
-#popup {
-  display: none;
-  position: fixed;
+#transcontainer {
+  width: 767px;
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: white;
+  opacity: 0;
+}
+
+#transcontainer.animate {
+  opacity: 1;
+  animation-name: changeOpacity;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes changeOpacity {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.images-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.image-select {
+  display: block;
+  position: relative;
+  width: 75px;
+  height: 55px;
+  overflow: hidden;
+}
+
+.image-select img {
   width: 100%;
   height: 100%;
-  background-color: #f7f4ea;
+  opacity: .5;
 }
 
-#popmenu {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: 250px;
-  text-align: center;
-  background: #fff;
-}
-
-#popmenu p {
-  margin-top: 80px;
-}
-
-.exit {
-  position: absolute;
-  left: 50%;
-  bottom: 10px;
-  transform: translate(-50%, 0);
-  width: 60px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  background: black;
+.image-select img:hover {
+  opacity: 1;
   cursor: pointer;
-  color: #fff;
 }
 
+image:focus {
+  outline: none;
+}
 
+#selectedImageCaption {
+  font-family: 'Abel', sans-serif;
+  text-align: center;
+  line-height: 15px;
+  margin-top: 15px;
+  width: 100%;
+  background: white;
+  opacity: .8;
+}
 
+/*카드 전환*/
+.flip-card {
+  position: relative;
+  background-color: transparent;
+  width: 220px;
+  height: 270px;
+  perspective: 1600px;
+  /*카드 전환될 때 3D 공간의 깊이*/
+}
 
+.flip-card-inner {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+  /*2D => 3D로 전환하기 위해 사용*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
+input[type="checkbox"] {
+  /*체크 박스 숨기기*/
+  display: none;
+}
 
+.flipcard {
+  animation-name: animateflipcard;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  /*앞부분 보여주기, 사용 안 하면 원래 이미지로 돌아온다.*/
+}
+
+@keyframes animateflipcard {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+}
+
+.-flipcard {
+  animation-name: -animateflipcard;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes -animateflipcard {
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+
+/*=============================카드 뒷부분==========================*/
+.flip-card-back {
+  background: radial-gradient(circle at 10% 20%, #FEFCF3, #F5EBE0, #F0DBDB, #F8CBA6);
+  transform: rotateY(180deg);
+  font-family: 'Abel', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.flip-card-back h4 {
+  /*리뷰 제목*/
+  font-family: 'Mulish', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 20px 20px 15px 20px;
+  line-height: 15px;
+}
+
+.flip-card-back p {
+  /*리뷰 내용*/
+  text-align: justify;
+  line-height: 20px;
+  margin: 10px 15px 0 15px;
+}
+
+#Card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5px;
+}
 
 /* =============================리뷰==========================*/
 textarea {
   position: relative;
   width: 500px;
   height: 200px;
+  position: relative;
+  top: 100px;
+  left: 500px;
 }
 
 #starFill .star {
@@ -204,6 +466,9 @@ textarea {
   direction: rtl;
   /*right to left 오른쪽에서 왼쪽으로*/
   border: none;
+  position: relative;
+  left: 500px;
+  top: 100px;
 }
 
 #starFill input {
@@ -220,15 +485,38 @@ textarea {
 }
 
 #starFill label:hover {
-  text-shadow: 0 0 0 orange;
+  text-shadow: 0 0 0 rgb(41, 41, 39);
 }
 
 #starFill label:hover~label {
-  text-shadow: 0 0 0 orange;
+  text-shadow: 0 0 0 rgb(41, 41, 39);
   /* 마우스 오버 뒤 */
 
 }
 
 #starFill input[type=radio]:checked~label {
-  text-shadow: 0 0 0 orange;
+  text-shadow: 0 0 0 rgb(41, 41, 39);
+}
+button{
+  position: relative;
+  top:130px;
+  left: 60px;
+  height: 34px;
+  background-color: #192941;
+  color: white;
+  font-weight: bold;
+  width: 150px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 2px 2px 1px 1px rgb(97, 123, 153);
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.reviewInput{
+  display: inherit;
+  /* display: block; */
+  /* margin: auto; */
 }
