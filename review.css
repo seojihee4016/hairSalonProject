@@ -451,13 +451,9 @@ input[type="checkbox"] {
 }
 
 /* =============================리뷰==========================*/
-textarea {
-  position: relative;
-  width: 500px;
-  height: 200px;
-  position: relative;
-  top: 100px;
-  left: 500px;
+form{
+  display: block;
+  margin: auto;
 }
 
 #starFill .star {
@@ -467,7 +463,7 @@ textarea {
   /*right to left 오른쪽에서 왼쪽으로*/
   border: none;
   position: relative;
-  left: 500px;
+  /* left: 500px; */
   top: 100px;
 }
 
@@ -500,7 +496,7 @@ textarea {
 button{
   position: relative;
   top:130px;
-  left: 60px;
+  /* left: 60px; */
   height: 34px;
   background-color: #192941;
   color: white;
@@ -512,11 +508,13 @@ button{
   box-shadow: 2px 2px 1px 1px rgb(97, 123, 153);
   cursor: pointer;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
-.reviewInput{
-  display: inherit;
-  /* display: block; */
-  /* margin: auto; */
+textarea {
+  width: 500px;
+  height: 200px;
+  display: block;
+  margin: auto;
+  position: relative;
+  top: 100px;
 }
