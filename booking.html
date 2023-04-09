@@ -5,43 +5,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>예약페이지</title>
+  <title>예약 페이지</title>
   <!-- 메뉴 아이콘 -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="booking.css">
 </head>
 
 <body>
-  <!-- 메뉴바 -->
-  <div class="menu">
-    <label for="expand-menu">
-      <div>MENU</div>
-    </label>
-    <input type="checkbox" id="expand-menu" name="expand-menu">
-    <ul>
-      <li><a href="service.html" class="item">
-          <div>Services</div>
-        </a></li>
-      <li><a href="designer1.html" class="item">
-          <div>Designers</div>
-        </a></li>
-      <li><a href="reservation.html" class="item">
-          <div>Reservation</div>
-        </a></li>
-      <li><a href="contact.html" class="item">
-          <div>Contact</div>
-        </a></li>
-    </ul>
-  </div>
-
   <!-- 첫번째 섹션 -->
-  <h1 class="bookTest">BOOK YOUR VALUE</h1>
+  <div class="container">
+    <div class="part">
 
-  <!-- 가로 스크롤 -->
-  <div class="container" style="height: 700px;">
 
-    <div class="wrapper">
-      <form action="">
+      <!-- 메뉴바 -->
+      <div class="menu">
+        <label for="expand-menu">
+          <div>MENU</div>
+        </label>
+        <input type="checkbox" id="expand-menu" name="expand-menu">
+        <ul>
+          <li><a href="review.html" class="item">
+              <div>Reviews</div>
+            </a></li>
+          <li><a href="designer1.html" class="item">
+              <div>Designer choi</div>
+            </a></li>
+          <li><a href="designer1.html" class="item">
+              <div>Designer kim</div>
+            </a></li>
+          <li><a href="booking.html" class="item">
+              <div>Reservation</div>
+            </a></li>
+          <li><a href="signUp.html" class="item">
+              <div>Contact</div>
+            </a></li>
+        </ul>
+      </div> 
+    </div>
+
+
+    <!-- 두번째 섹션 -->
+    <div class="main">
+      <form id="form" onsubmit="return check1()">
+        <div class="desigerSel">
+          <div class="mainText">BOOK</div>
+
+        </div>
         <table class="Calendar">
           <thead>
             <tr>
@@ -65,78 +74,135 @@
           <tbody>
           </tbody>
         </table>
+        <div class="dateSel">DATE</div>
+    </div>
 
 
-        <select name="bookName">
-          <option value="designer" selected>--SELECT DESIGNER--</option>
-          <option value="designer">KIM</option>
-          <option value="designer">CHOI</option>
-        </select>
-
-
-        <img class="deImg" src="image/디자이너6.jpg" style="height: 400px;">
-        <img class="deImg" src="image/디자이너7.jpg">
-
-        <div class="inputText">
-          <input class="input" type="text" required> <!-- requier 유효성 검사할 때 필요 -->
-          <label class="label">Name</label><br>
-        </div>
-        <div class="inputText">
-          <input class="input" type="text" required>
-          <label class="label">Email</label><br>
-        </div>
-        <div class="inputText">
-          <input class="input" type="text" required>
-          <label class="label">PhoneNumber</label>
+    <!-- 세번째 섹션 -->
+    <div class="main-container">
+      <div class="main">
+        <div class="desigerSel">
+          <div class="mainText" style="text-align: center;">DISIGNER CHOI</div>
         </div>
 
-        <button type="submit">Submit</button>
+        <div class="desigerSel">
+          <img src="image/디자이너6.jpg">
+          <h2>DISIGNER<span> CHOI</span></h2>
+          <div class="detail">
+            <span>Working with Celebrities</span>
+            <span>nine years' experience</span>
+          </div>
+          <p>Specialized in cutting, perm, and dyeing</p>
+          <a href="designer1.html">See More</a>
+        </div>
+      </div>
+
+
+      <div class="main">
+        <div class="desigerSel">
+          <div class="mainText" style="text-align: center;">DISIGNER KIM</div>
+        </div>
+
+        <div class="desigerSel">
+          <img src="image/디자이너7.jpg" alt="">
+          <h2>DISIGNER<span> KIM</span></h2>
+          <div class="detail">
+            <span>Working with Celebrities</span>
+            <span>nine years' experience</span>
+          </div>
+          <p>Specialized in cutting, perm, and dyeing</p>
+          <a href="designer2.html">See More</a>
+        </div>
+      </div>
+
+
+      <div class="main">
+        <div class="desigerSel">
+          <div class="mainText">YOUR VALUE</div>
+          <div class="date">
+          </div>
+        </div>
+
+        <div class="desigerSel">
+          <img src="image/흑백 배경 레이어2.jpg">
+          <div style="text-align: center;">
+            <h2>Choose <span>a</span> Designer</h2>
+          </div>
+          <select name="bookName">
+            <option value="designer" selected>--SELECT DESIGNER--</option>
+            <option value="designer">KIM</option>
+            <option value="designer">CHOI</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- 세번째 섹션 -->
+    <div class="inputForm">
+      <marquee width="100%" direction="left"> <!-- 왼쪽으로 글자 움직이게 하기 -->
+        <span>Enter the reservation information</span>
+      </marquee>
+
+      <div class="information">
+        <div class="inform">Information</div>
+      </div>
+
+      <div class="form">
+        <div class="form-container">
+          <div class="num">
+            <div class="form-page">1</div>
+          </div>
+          <div class="inputText">
+            <input class="input" type="text" required>
+            <label class="label" name="name" id="name">Name</label><br>
+          </div>
+        </div>
+
+        <div class="form-container">
+          <div class="num">
+            <div class="form-page">2</div>
+          </div>
+          <div class="inputText">
+            <input class="input" type="text"  required>
+            <label class="label" name="email" id="email">Email</label><br>
+          </div>
+        </div>
+
+
+        <div class="form-container">
+          <div class="num">
+            <div class="form-page">3</div>
+          </div>
+          <div class="inputText">
+            <input class="input" type="text"  required>
+            <label class="label" name="phn" id="phn">PhoneNumber</label><br>
+          </div>
+        </div>
+
+        <div class="form-container">
+          <div class="num">
+            <div class="form-page">4</div>
+          </div>
+          <div class="inputText">
+            <input class="input" type="text" >
+            <label class="label" name="requests" id="requests">Requests</label><br>
+          </div>
+        </div>
+
+        <div class="form-container">
+          <div class="num">
+            <button id=btn onclick="check1()">제출</button>
+          </div>
+        </div>
+      </div>
     </div>
     </form>
-
-
-
-
-
-
-
-    <div class="wrapper">
-    </div>
-
   </div>
-  </div>
-  <script>
-    //스크립트로 하기
-    window.onload = () => {
-      function scrollH(e) {
-        e.preventDefault();
-        e = window.event || e;
-        let delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-        console.log(document.querySelector('.container').scrollLeft);
-        console.log(delta);
-        console.log((delta * 200));
-        document.querySelector('.container').scrollLeft -= (delta * 200);
-      }
-      if (document.querySelector('.container').addEventListener) {
-        document.querySelector('.container').addEventListener('mousewheel', scrollH, false);
-        document.querySelector('.container').addEventListener('DOMMouseScroll', scrollH, false);
-      }
-    }
-  </script>
 
-
-  <!-- 이미지 마우스 오버 -->
-  <script>
-    $(".hover").mouseleave(
-      function () {
-        $(this).removeClass("hover");
-      }
-    );
-  </script>
 
   <!-- 달력 -->
   <script>
-    window.addEventListener('load', function () { /*가로 스크롤 스크립트랑 겹치는 거 해결하기*/
+    window.addEventListener('load', function () {
       Calendar();
     });
 
@@ -223,28 +289,29 @@
   </script>
 
 
-  <!-- input -->
-
+  <!-- 폼 유효성 체크 -->
   <script>
-    function splitEmail(email) {
-      let stdIndex = email.indexOf("@");
-      if (stdIndex != -1) {
-        console.log("아이디 : " + email.substring(0, stdIndex));
-        console.log("도메인 : " + email.substring(stdIndex + 1, email.length));
-      } else {
-        alert("메일 형식이 잘못되었습니다.");
-      }
+          var f = document.getElementById('frm');
+    // const name = form.name;
+    function check1() {
+      if(f.name.value =""){
+        alert("아이디를 입력하시오");
+        f.name.focus();
+        return false;
+      } 
+      if(f.email.value =""){
+        alert("이메일을 입력하시오");
+        f.email.focus();
+        return false;
+      } 
+      if(f.phn.value =""){
+        alert("전화번호를 입력하시오");
+        f.phn.focus();
+        return false;
+      } 
+      alert("예약완료");
     }
-
   </script>
-
-
-
-
-
-
-
-
 </body>
 
 </html>

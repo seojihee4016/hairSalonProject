@@ -1,43 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-}
-
-body {
-  background-color: #ccc5b8;
-  
-}
-
-/* =======================가로 스크롤 ======================*/
-.container {
-  /*가로로 스크롤 수행시킬 대상 div */
-  width: 1250px;
-  overflow-x: scroll;
-  display: flex;
-  height: 100px;
-
-}
-
-.wrapper {
-  min-width: 100%;
-  /*컨테이너 자체에 가로 스크롤이 생길수 잇도록 내부 요소의 가로 사이즈를 지정 */
-}
-
-::-webkit-scrollbar {
-  /*스크롤바 숨기기*/
-  display: none;
 }
 
 /* ========================메뉴 버튼======================*/
 .menu ::before {
   font-family: 'Material Icons';
-  font-size: 1.2rem;
+  font-size: 1rem;
   float: left;
   clear: left;
 }
 
+/* 구글 플랫 아이콘 */
 /* 구글 플랫 아이콘 */
 .menu label::before {
   content: '\e5d2';
@@ -46,22 +23,25 @@ body {
 .menu li:nth-child(1) a::before {
   content: '\ea70';
 }
-
 .menu li:nth-child(2) a::before {
   content: '\f8d9';
 }
-
 .menu li:nth-child(3) a::before {
-  content: '\e0cf';
+  content: '\f8d9';
 }
 
 .menu li:nth-child(4) a::before {
-  content: '\e897';
+  content: '\e0cf';
 }
 
 .menu li:nth-child(5) a::before {
+  content: '\e897';
+}
+
+.menu li:nth-child(6) a::before {
   content: '\e87d';
 }
+
 
 #expand-menu {
   /* 체크박스 폼 요소 감추기 */
@@ -85,8 +65,8 @@ body {
   transition: all 0.5s ease;
   /* 반응형 애니메이션 */
   position: absolute;
-  top: 10px;
-  /* right: 10px; */
+  top: 0px;
+  bottom: 10px;
 }
 
 .menu ul {
@@ -103,7 +83,7 @@ padding: 0; */
   cursor: pointer;
   color: black;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 10px;
 
 }
 
@@ -114,9 +94,8 @@ padding: 0; */
 
 .menu div {
   line-height: 0;
-  font-size: 10rem;
   font-family: 'Noto Sans KR';
-  padding: 0 0 0 40px;
+  padding: 0 0 0 10px;
   /* 아이콘과 텍스트 사이 여백 */
 }
 
@@ -137,7 +116,7 @@ padding: 0; */
   /* 절대 위치로 텍스트 고정 */
   left: 50px;
   line-height: 1;
-  font-size: 1rem;
+  font-size: 15px;
   font-family: 'Noto Sans KR';
   padding: 0 0 0 30px;
 }
@@ -147,47 +126,293 @@ padding: 0; */
   display: none;
 }
 
-/* =====================타이핑=================== */
-.bookTest {
-  font-size: 5rem;
-  min-width: 11px;
-  white-space: nowrap;
-  position: relative;
-  color: transparent;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
+img {
+  max-width: 100%;
 }
 
-.bookTest::before {
-  content: "BOOK YOUR VALUE";
-  position: absolute;
-  top: 60px;
-  left: 70px;
-  /* text-align: center; */
+body {
+  background-color: #121418;
+  display: flex;
+  font-family: "Inter", sans-serif;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
-  height: 100%;
-  color: black;
+  padding: 0 2em;
+  font-weight: 400;
+  height: 100vh;
+}
+
+.container {
+  background-color: #e9e6e4;
+  max-width: 1350px;
+  display: grid;
+  height: 90vh;
+  max-height: 800px;
   overflow: hidden;
-  border-right: 1px solid black;
-  animation: typing 6s steps(13) infinite;
+  grid-template-columns: 15% 20% 35% 30%;
+  grid-template-rows: 100%;
+  width: 100%;
+  padding: 40px 4px;
+  position: relative;
 }
 
-@keyframes typing {
-
-  /*타이핑 커서 어디까지*/
-  0% {
-    width: 0%;
-  }
-
-  50% {
-    width: 62%;
-  }
-
-  100% {
-    width: 0%;
+@media screen and (max-width: 1030px) {
+  .container {
+    grid-template-columns: 20% 50% 30%;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 25% 75%;
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .container {
+    grid-template-columns: 100%;
+  }
+}
+
+/* ======================================= */
+.part {
+  /*첫번째 섹션*/
+  padding: 0 20px;
+}
+
+/*첫번째 섹션 라인*/
+.part:not(:last-child) {
+  border-right: 1px solid #94918f;
+  position: relative;
+  right: 33px;
+}
+
+.date {
+  font-size: 22px;
+  text-decoration: none;
+  color: #161419;
+  display: flex;
+  letter-spacing: -0.5px;
+  align-items: center;
+}
+
+
+.blog .is-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1030px) {
+  .blog .is-menu {
+    display: none;
+  }
+}
+
+.mainText {
+  font-size: 5rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: -5px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+@media screen and (max-width: 1400px) {
+  .mainText {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .mainText {
+    font-size: 5rem;
+    letter-spacing: -2px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .mainText {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+}
+
+/* ==============첫번째 섹션============== */
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.desigerSel {
+  padding: 0 20px;
+}
+
+.desigerSel img {
+  height: 260px;
+  max-height: 22vh;
+  width: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.dateSel {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  height: 100%;
+  font-size: 72px;
+  text-align: center;
+  /* letter-spacing: -3px; */
+  /* font-weight: lighter; */
+  font-family: "Space Grotesk", sans-serif;
+  border-right: 1px solid #94918f;
+  /* white-space: nowrap */
+}
+
+.desigerSel h2 {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 8px 0 8px;
+}
+
+.desigerSel h2 span {
+  font-family: "Playfair Display", serif;
+}
+
+.desigerSel p {
+  line-height: 1.5;
+  margin: 14px 0;
+}
+
+.desigerSel a {
+  color: #161419;
+  text-decoration: none;
+  font-size: 26px;
+  letter-spacing: -1px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: auto;
+  border-top: 1px solid #94918f;
+  padding-top: 20px;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  font-size: 14px;
+  font-family: "Playfair Display", serif;
+}
+
+.main-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+  border-right: 1px solid #94918f;
+}
+
+/*스크롤*/
+.main-container>* {
+  flex-shrink: 0;/*Flex Container에 공간이 부족해질 때 Flex Item의 axis 방향 크기가 얼마나 줄어들 수 있는지 지정하는 값*/
+  min-height: 100%;
+  scroll-snap-align: start;/*요소가 스크롤되는 위치에 자동으로 스냅*/
+}
+
+marquee {
+  font-size: 20px;
+  background-color: #121418;
+  color: #e9e6e4;
+  padding: 6px 0;
+  width: calc(100% + 10px);
+  margin-left: -20px;
+  flex-shrink: 0;
+  position: relative;
+  left: 20px;
+}
+
+marquee span:before {
+  display: inline-block;
+  content: "";
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: relative;
+  top: -1px;
+  vertical-align: baseline;
+  background-color: #fbfbfb;
+  margin: 0 16px;
+}
+
+.form {
+  overflow: auto;
+  height: calc(100% + 60px);
+  margin-left: 20px;
+}
+
+.inform {
+  font-size: 25px;
+  font-family: "Playfair Display", serif;
+  margin-left: 15px;
+}
+
+.information {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #94918f;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  margin-top: 100px;
+  letter-spacing: -1px;
+}
+
+.num {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 56px;
+  margin-bottom: 16px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.form-page-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  max-width: 16ch;
+  letter-spacing: -2px;
+}
+
+.form-page-subtitle {
+  max-width: 33ch;
+  font-size: 15px;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+.form-container+.form-container {
+  margin-top: 40px;
+}
+
+.inputForm {
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  /*스크롤 안 보이게 하기*/
+}
+
+
 
 /* ========================달력======================= */
 td {
@@ -198,12 +423,11 @@ td {
 
 .Calendar {
   text-align: center;
-  margin: 0 auto;
-  margin-top: 80px;
+  /* margin: 0 auto; */
   position: relative;
-  top: 70px;
-  margin-left: 80px;
-  margin-right: auto;
+  right: 22px;
+  font-size: 13px;
+
 }
 
 .Calendar>thead>tr:first-child>td {
@@ -211,20 +435,23 @@ td {
 }
 
 .Calendar>thead>tr:last-child>td {
-  background-color: rgb(255, 255, 255);
-  color: black;
+  background-color: black;
+  color: white;
   font-weight: bold;
-  border-radius:20px;
+  border-radius: 100px;
 }
 
 .pastDay {
-  background-color: rgb(219, 219, 219);
+  background-color: rgb(204, 204, 204);
   border-radius: 10px;
 }
 
 .today {
-  background-color: #fffdc0;
-  border-radius: 50%;
+  color: #005e14;
+  background-color: #b48c86;
+  border-radius: 10px;
+  font-weight: bold;
+  /* border-radius: 50%; */
   cursor: pointer;
 }
 
@@ -234,39 +461,32 @@ td {
 
 .futureDay.choiceDay,
 .today.choiceDay {
-  background-color: #b3d1fe;
-  border-radius: 100%;
-  color: rgb(31, 31, 31);
+  background-color: rgb(76, 75, 75);
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
 }
 
-/* 폼 요소들 */
+/* ==============================select============================== */
 select {
-  /* display: inline-block; */
-  position: relative;
-  bottom: 300px;
-  left: 760px;
-  height: 34px;
-  background-color: #192941;
+  /*가운데 정렬*/
+  margin: auto;
+  display: block;
+  -webkit-appearance: none;
+  /*화살표 안 뜨게 하기*/
+  background-color: #121418;
   color: white;
-  font-weight: bold;
-  width: 195px;
-  border-radius: 10px;
-  /* border: #b3d1fe; */
-  border: beige;
+  height: 30px;
+  margin-top: 50px;
   text-align: center;
-  font-size: 14px;
-  -webkit-appearance: none; /*화살표 안 뜨게 하기*/
-  box-shadow: 2px 2px 1px 1px rgb(97, 123, 153);
+  cursor: pointer;
 }
+
+/* ==============================정보 폼============================== */
 .inputText {
   position: relative;
   width: 300px;
-  margin-left: 120px;
-  margin-top: 100px;
-  bottom: 820px;
-  left: 1200px;
-
 }
 
 .input {
@@ -276,63 +496,61 @@ select {
   border: none;
   border-bottom: solid #222222 1px;
   padding-bottom: 10px;
+  /*위로 올라가게*/
   text-align: center;
   position: relative;
   background: none;
   z-index: 5;
 }
 
-.input::placeholder { color: #aaaaaa; }
-.input:focus { outline: none; }
+.input::placeholder {
+  color: #585858;
+}
+
+.input:focus {
+  outline: none;
+}
 
 .label {
-position: absolute;
-color: #222222;
-left: 50%;
-transform: translateX(-50%);
-font-size: 20px;
-bottom: 8px;
-transition: all .2s;
+  position: absolute;
+  color: #222222;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  bottom: 8px;
+  transition: all .2s;
 }
 
-.input:focus ~ label, .input:valid ~ label {
-font-size: 16px;
-bottom: 40px;
-color: #666;
-font-weight: bold;
+.input:focus~label,
+.input:valid~label {
+  font-size: 16px;
+  bottom: 40px;
+  color: #666;
+  font-weight: bold;
 }
 
-.input:focus ~ span, .input:valid ~ span {
-width: 100%;
+.input:focus~span,
+.input:valid~span {
+  width: 100%;
 }
 
-
-/* ======================이미지==================== */
-.deImg {
-  text-align: center;
-  margin-left: 30px;
-  margin-right: auto;
+button {
   position: relative;
-  bottom: 350px;
-  width: 320px;
-  left: 300px;
-  opacity: 88%;
-}
-button{
-  position: relative;
-  bottom: 725px;
-  left: 1420px;
   width: 100px;
   height: 30px;
   font-size: 1rem;
   font-weight: bold;
-  background-color: #192941;
+  background-color: black;
   color: white;
   border-radius: 10px;
   border: none;
-  box-shadow: 2px 2px 1px 1px rgb(97, 123, 153);
+  box-shadow: 2px 2px 1px 1px rgb(46, 46, 46);
   transition-duration: 0.3s;
+  cursor: pointer;
+  display: block;
+  margin: auto;
 }
-button:active{
+
+button:active {
   box-shadow: none;
 }

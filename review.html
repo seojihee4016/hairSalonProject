@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-  <title>예약 페이지</title>
+  <title>리뷰 페이지</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -21,6 +21,7 @@
 
 <body class="scroll">
 
+ 
   <!-- 메뉴바 -->
   <div class="menu">
     <label for="expand-menu">
@@ -28,29 +29,29 @@
     </label>
     <input type="checkbox" id="expand-menu" name="expand-menu">
     <ul>
-      <li><a href="review.html" class="item">
+      <li><a href="review.html" class="item">               
           <div>Review</div>
         </a></li>
       <li><a href="designer1.html" class="item">
-          <div>Designer</div>
+          <div>Designer choi</div>
+        </a></li>
+        <li><a href="designer2.html" class="item">
+          <div>Designer kim</div>
         </a></li>
       <li><a href="booking.html" class="item">
           <div>Reservation</div>
         </a></li>
-      <li><a href="contact.html" class="item">
+      <li><a href="signUp.html" class="item">
           <div>Contact</div>
         </a></li>
     </ul>
   </div>
 
-
-
-
-  <main>
+  <div class="main">
     <section class="container">
-      <textAll>
-        <h1 class="webName">Hair Logo</h1>
-        <div id="subtitle" class="text" style="font-size: 2rem;">WRITE YOUR REVIEW</div>
+      <div class="textAll">
+        <p class="webName"><a href="main.html">HairLogo</a></p><br>
+        <div id="subtitle" class="text">WRITE YOUR REVIEW</div>
 
         <!-- 메인 이미지 부분 -->
         <div id="mainImage">
@@ -85,10 +86,10 @@
     </section>
 
     <section class="container">
-      <textAll>
-        <div class="text" style="font-size: 2rem; font-weight: bold;">Read the reviews and decide.</div>
-      </textAll>
-      <textAll id="infoinventions">
+      <div class="textAll">
+        <div class="text">Read the reviews and decide.</div>
+      </div>
+      <div class="textAll" id="infoinventions">
         <h3>REVIEWS</h3>
         <ul id="Card">
           <li>
@@ -96,7 +97,7 @@
               <input type="checkbox" id="btnControl1" class="btnControl" />
               <label class="flip-card-inner" for="btnControl1">
                 <div class="flip-card-front">
-                  <img class="flip-card-front-image" src="image/사용자.jpg">
+                  <img src="image/사용자.jpg">
                 </div>
                 <div class="flip-card-back">
                   <h4 id="userName">nick</h4>
@@ -110,7 +111,7 @@
               <input type="checkbox" id="btnControl2" class="btnControl" />
               <label class="flip-card-inner" for="btnControl2">
                 <div class="flip-card-front">
-                  <img src="image/사용자.jpg" alt="2 Hydroelectric Power Plant">
+                  <img src="image/사용자.jpg">
                 </div>
                 <div class="flip-card-back">
                   <h4 id="userName">KIM</h4>
@@ -248,29 +249,31 @@
           </li>
         </ul>
 
-      </textAll>
+      </div>
       <br><br><br><br><br><br><br><br>
 
-      
+
       <!-- 리뷰 폼 -->
-      <div class="text" style="font-size: 2rem; font-weight: bold;" >YOUR REVIEW!</div>
-  <form action="">
-    <div id="starFill">
-      <div class="star">
-        <input type="radio" name="rating" value="5" id="rate1"><label for="rate1">⭐</label>
-        <input type="radio" name="rating" value="4" id="rate2"><label for="rate2">⭐</label>
-        <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">⭐</label>
-        <input type="radio" name="rating" value="2" id="rate4"><label for="rate4">⭐</label>
-        <input type="radio" name="rating" value="1" id="rate5"><label for="rate5">⭐</label>
+      <div class="text">YOUR REVIEW!</div>
+      <form id="frm" onsubmit="return check()">
+        <div id="starFill">
+          <div class="star">
+            <input type="radio" name="rating" value="5" id="rate1"><label for="rate1">⭐</label>
+            <input type="radio" name="rating" value="4" id="rate2"><label for="rate2">⭐</label>
+            <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">⭐</label>
+            <input type="radio" name="rating" value="2" id="rate4"><label for="rate4">⭐</label>
+            <input type="radio" name="rating" value="1" id="rate5"><label for="rate5">⭐</label>
+          </div>
+      </form>
+      <div class="reviewInput">
+        <textarea id="inputre" maxlength="100" placeholder="여기에 리뷰 작성"></textarea>
+        <button id="btn" onsubmit="check()">등록</button><br><br><br><br><br><br><br><br><br><br>
       </div>
-  </form>
-  <div class="reviewInput">
-    <textarea name="" maxlength="100" placeholder="여기에 리뷰 작성" required></textarea>
-  </div>
-  <button class="" onclick="alert('등록이 완료되었습니다.')">등록</button><br><br><br><br><br><br><br><br><br><br>
-  </form>
-  
-  </main>
+      </form>
+    </div>
+
+
+
 
   <script>
     //이미지 클릭하면 바뀌게
@@ -319,7 +322,7 @@
     // 메인 이미지 부분
     window.onload = function initialize() {
       if (document.readyState === 'complete') {
-        
+
         //시작하면 메인 이미지 띄우기
         document.getElementById('image').src = "image/booking2.jpg"
         document.getElementById('selectedImageCaption').innerHTML =
@@ -342,11 +345,22 @@
         });
       }
     }
-
-
-
   </script>
 
+
+  <!-- 리뷰 -->
+  <script>
+    function check() {
+      var f = document.getElementById('frm');
+      if (f.inputre.value == "") {
+        alert("리뷰를 입력해주십시오");
+        f.inputre.focus();
+        return false;
+      }else{
+        alert("리뷰가 등록되었습니다.");
+      }
+    }
+  </script>
 
 </body>
 

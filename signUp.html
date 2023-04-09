@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lnag="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>회원가입 페이지</title>
+  <link rel="stylesheet" href="signUp.css">
+
+  <!-- mainWebName 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- 메뉴 아이콘 -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 메뉴바 -->
+  <div class="menu">
+    <label for="expand-menu">
+      <div>MENU</div>
+    </label>
+    <input type="checkbox" id="expand-menu" name="expand-menu">
+    <ul>
+      <li><a href="review.html" class="item">
+          <div>Review</div>
+        </a></li>
+      <li><a href="designer1.html" class="item">
+          <div>Designers</div>
+        </a></li>
+      <li><a href="booking.html" class="item">
+          <div>Reservation</div>
+        </a></li>
+      <li><a href="signUp.html" class="item">
+          <div>Contact</div>
+        </a></li>
+    </ul>
+  </div>
+  <div class="webName">
+    <a href="main.html" title="메인페이지 이동" style=" text-decoration-line: none;">HairLogo</a>
+  </div>
+
+  <form id="form" onsubmit="return checkAll()">
+    <div id="wrapper">
+      <div id="content">
+        <div>
+          <h3 class="join_title">
+            <label for="id">아이디</label>
+          </h3>
+          <span class="box int_id">
+            <input type="text" id="uid" class="int" maxlength="20">
+            <span class="url">@hairSalon.com</span>
+          </span>
+        </div>
+
+        <!-- PW1 -->
+        <div>
+          <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
+          <span class="box int_pass">
+            <input type="text" id="pswd1" class="int" maxlength="20">
+          </span>
+        </div>
+
+        <!-- PW2 -->
+        <div>
+          <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
+          <span class="box int_pass_check">
+            <input type="text" id="pswd2" class="int" maxlength="20">
+          </span>
+        </div>
+
+        <!-- NAME -->
+        <div>
+          <h3 class="join_title"><label for="name">이름</label></h3>
+          <span class="box int_name">
+            <input type="text" id="name" class="int" maxlength="20">
+          </span>
+        </div>
+
+        <!-- BIRTH -->
+        <div>
+          <h3 class="join_title"><label for="yy">생년월일</label></h3>
+
+          <div id="bir_wrap">
+            <!-- BIRTH_YY -->
+            <div id="bir_yy">
+              <span class="box">
+                <input type="text" id="yy" class="int" maxlength="4" placeholder="****년">
+              </span>
+            </div>
+
+            <!-- BIRTH_MM -->
+            <div id="bir_mm">
+              <span class="box">
+                <select id="mm" class="sel">
+                  <option>월</option>
+                  <option value="01">1</option>
+                  <option value="02">2</option>
+                  <option value="03">3</option>
+                  <option value="04">4</option>
+                  <option value="05">5</option>
+                  <option value="06">6</option>
+                  <option value="07">7</option>
+                  <option value="08">8</option>
+                  <option value="09">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </span>
+            </div>
+
+            <!-- BIRTH_DD -->
+            <div id="bir_dd">
+              <span class="box">
+                <input type="text" id="dd" class="int" maxlength="2" placeholder="일">
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- GENDER -->
+        <div>
+          <h3 class="join_title"><label for="gender">성별</label></h3>
+          <span class="box gender_code">
+            <select id="gender" class="sel">
+              <option value="M" selected>남자</option>
+              <option value="F">여자</option>
+            </select>
+          </span>
+        </div>
+
+        <!-- EMAIL -->
+        <div>
+          <h3 class="join_title"><label for="email">본인확인 이메일<span class="optional">(선택)</span></label></h3>
+          <span class="box int_email">
+            <input type="text" id="email" class="int" maxlength="100" placeholder="선택입력">
+          </span>
+        </div>
+
+        <!-- MOBILE -->
+        <div>
+          <h3 class="join_title"><label for="phoneNo">휴대전화<span class="optional">(선택)</span></label></h3>
+          <span class="box int_mobile">
+            <input type="tel" id="mobile" class="int" maxlength="11" placeholder="전화번호 입력">
+          </span>
+        </div>
+
+
+        <!-- JOIN BTN-->
+        <div class="btn_area">
+          <button type="submit" id="btnJoin" onsubmit="checkAll()">
+            가입하기
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+  <!-- 회원가입 유효성 검사 -->
+  <script>
+    // 유효성 검사 메서드
+    function checkAll() {
+      //변수에 저장
+      var id = document.getElementById("uid")
+      var pswd1 = document.getElementById("pswd1")
+      var pswd2 = document.getElementById("pswd2")
+      var name = document.getElementById("name")
+      var year = document.getElementById("yy")
+      var month = document.getElementById("mm")
+      var day = document.getElementById("dd")
+      var gender = document.getElementById("gender")
+
+
+      // 정규식
+      // id, pw
+      var regIdPw = /^[a-zA-Z0-9]{4,12}$/;
+      // 이름
+      var regName = /^[가-힣a-zA-Z]{2,15}$/;
+      // 이메일
+      var regMail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+      // 년도
+      var regYear = /^[1-2]{1}[0-9]{0,4}$/;
+
+      //아이디 확인
+      if (uid.value == "") {
+        alert("아이디를 입력하세요.")
+        uid.focus();
+        return false;
+      }
+      //아이디 영어 대소문자 확인
+      if (!regIdPw.test(uid.value)) {
+        alert("4~12자 영문 대소문자, 숫자만 입력하세요.")
+        uid.focus();
+        return false;
+      }
+
+      //비밀번호 확인
+      if (pswd1.value == "") {
+        alert("비밀번호를 입력하세요.")
+        pswd1.focus();
+        return false;
+      }
+      //비밀번호 영어 대소문자 확인
+      if (!regIdPw.test(pswd1.value)) {
+        alert("4~12자 영문 대소문자, 숫자만 입력하세요.")
+        pswd1.focus();
+        return false;
+      }
+      //비밀번호와 아이디 비교
+      if (uid.value == pswd1.value) {
+        alert("아이디와 동일한 비밀번호를 사용할 수 없습니다.")
+        pswd1.focus();
+        return false;
+      }
+
+      //비밀번호 확인
+      if (pswd1.value != pswd2.value) {
+        alert("비밀번호와 동일하지 않습니다.")
+        pswd2.focus();
+        return false;
+      }
+
+      //이름 확인 = 한글과 영어만 가능하도록
+      if (name.value == "") {
+        alert("이름을 입력하세요.")
+        name.focus();
+        return false;
+      }
+
+      if(!regName.test(name.value)) {
+        alert("최소 2글자 이상, 한글과 영어만 입력하세요.")
+        name.focus();
+        return false;
+      }
+
+      //생년월일 확인
+      if (yy.value == "") {
+        alert("년도를 입력하세요.")
+        yy.focus();
+        return false;
+      }
+
+      if (!regYear.test(yy.value)) {
+        alert("년도를 정확하게 입력해주세요.")
+        yy.focus();
+        return false;
+      }
+
+      if (!(yy.value >= 1900 && yy.value <= 2050)) {
+        alert("년도를 정확하게 입력해주세요.")
+        yy.focus();
+        return false;
+      }
+      //월
+      if (month.value == "") {
+        alert("월을 입력하세요.")
+        month.focus();
+        return false;
+      }
+
+
+      if (!(month.value >= 1 && month.value <= 12)) {
+        alert("월을 정확하게 입력해주세요.")
+        month.focus();
+        return false;
+      }
+
+      //일
+      if (dd.value == "") {
+        alert("일을 입력하세요.")
+        dd.focus();
+        return false;
+      }
+
+      if (!regDay.test(dd.value)) {
+        alert("일을 정확하게 입력해주세요.")
+        dd.focus();
+        return false;
+      }
+
+      if (!(dd.value > 0 && dd.value <= 31)) {
+        alert("일을 정확하게 입력해주세요.")
+        dd.focus();
+        return false;
+      }
+
+      //전화번호
+      if (!regMobile.test(moblie.value)) {
+        alert("숫자만 입력가능합니다.");
+        moblie.focus();
+        return false;
+      }
+      // 유효성 문제 없을 시 폼에 submit
+      (document.form.submit())
+      
+      
+
+    }
+  </script>
+
+
+</body>
+
+</html>
