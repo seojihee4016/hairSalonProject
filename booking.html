@@ -34,7 +34,7 @@
               <div>Designer kim</div>
             </a></li>
           <li><a href="booking.html" class="item">
-              <div>Reservation</div>
+              <div>Booking</div>
             </a></li>
           <li><a href="signUp.html" class="item">
               <div>Contact</div>
@@ -291,25 +291,25 @@
 
   <!-- 폼 유효성 체크 -->
   <script>
-          var f = document.getElementById('frm');
-    // const name = form.name;
+    
     function check1() {
-      if(f.name.value =""){
-        alert("아이디를 입력하시오");
+      var f = document.getElementById('form');
+      if(f.name.value ==""){
+        alert("아이디를 입력하세요");
         f.name.focus();
         return false;
       } 
-      if(f.email.value =""){
-        alert("이메일을 입력하시오");
+      if(f.email.value ==""){
+        alert("이메일을 입력하세요");
         f.email.focus();
         return false;
       } 
-      if(f.phn.value =""){
-        alert("전화번호를 입력하시오");
+      if(f.phn.value ==""){
+        alert("전화번호를 입력하세요");
         f.phn.focus();
         return false;
       } 
-      alert("예약완료");
+      alert("예약 완료");
     }
   </script>
 </body>
